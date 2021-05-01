@@ -1,4 +1,7 @@
 server <- function(input, output, session) {
+  session$userData$fake_data_configuration <- init_fake_data_configuration
+  session$userData$fake_data <- fixtuRes::MockDataGenerator$new(init_fake_data_configuration)
+
   is_download_panel_open <- reactiveVal(FALSE)
   output$download_panel <- renderReact({
     Panel(
@@ -8,6 +11,9 @@ server <- function(input, output, session) {
       onDismiss = JS("function() { Shiny.setInputValue('hide_download_panel', Math.random()); }")
     )
   })
+
   observeEvent(input$show_download_panel, is_download_panel_open(TRUE))
   observeEvent(input$hide_download_panel, is_download_panel_open(FALSE))
+
+  data_preview$server("data_preview")
 }
