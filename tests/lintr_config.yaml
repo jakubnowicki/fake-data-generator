@@ -1,0 +1,15 @@
+directories_to_lint:
+  - app
+  - tests
+files_to_lint:
+  - app.R
+linter_configuration:
+  # Purposefully disabled linters:
+  object_usage_linter: NULL # Conflicts with standard usage of dplyr.
+  camel_case_linter: NULL # Conflicts with Shiny functions which are camelCase.
+  commented_code_linter: NULL # Commented code is useful in a template.
+  open_curly_linter: NULL
+  # Enabled linters with custom arguments:
+  closed_curly_linter: !expr lintr::closed_curly_linter(allow_single_line = TRUE)
+  line_length_linter: !expr lintr::line_length_linter(140)
+  object_length_linter: !expr lintr::object_length_linter(40)

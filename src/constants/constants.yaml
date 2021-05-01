@@ -1,0 +1,5 @@
+default:
+  sass:
+    input: "styles/main.scss"
+    style: "compressed"
+    output: "www/css/sass.min.css"
