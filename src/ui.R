@@ -14,7 +14,7 @@ fluentPage(
       ),
       PivotItem(
         headerText = "Preview",
-        "Data preview"
+        data_preview$ui("data_preview")
       ),
       PivotItem(
         headerText = "Editor",

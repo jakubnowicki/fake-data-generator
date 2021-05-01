@@ -4,6 +4,7 @@ library(modules)
 library(config)
 library(sass)
 library(fixtuRes)
+library(reactable)
 
 consts <- config::get(file = "constants/constants.yaml")
 
@@ -13,3 +14,7 @@ sass(
   cache = FALSE,
   output = consts$sass$output
 )
+
+init_fake_data_configuration <- yaml::read_yaml("constants/init_data_configuration.yaml")
+
+data_preview <- modules::use("modules/data_preview.R")
