@@ -1,24 +1,26 @@
-fluentPage(
-    tags$head(
+fluidPage(
+  tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "css/sass.min.css")
   ),
-  div(
-    Pivot(
-      PivotItem(
-        headerText = "Hello there!",
-        "Home screen placeholder"
-      ),
-      PivotItem(
-        headerText = "Configuration",
-        "Fake data configuration placeholder"
-      ),
-      PivotItem(
-        headerText = "Preview",
-        data_preview$ui("data_preview")
-      ),
-      PivotItem(
-        headerText = "Editor",
-        "Yaml editor"
+  tabsetPanel(
+    tabPanel(
+      "Hello there!"
+    ),
+    tabPanel(
+      "Configuration",
+      div(id = "test_sort", div("a"), div("b"), div("c"))
+    ),
+    tabPanel(
+      "Preview",
+      data_preview$ui("data_preview")
+    ),
+    tabPanel(
+      "Editor",
+      shinyAce::aceEditor(
+        outputId = "editor",
+        mode = "yaml",
+        placeholder = "Show a placeholder when the editor is empty ...",
+        value = "aaasdfsadfa"
       )
     )
   ),
@@ -26,5 +28,6 @@ fluentPage(
     class = "download-panel-button",
     DefaultButton.shinyInput("show_download_panel", text = "Download"),
   ),
-  reactOutput("download_panel")
+  reactOutput("download_panel"),
+  sortable::sortable_js("test_sort")
 )

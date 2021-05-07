@@ -58,6 +58,13 @@
       "Repository": "CRAN",
       "Hash": "e8a22846fff485f0be3770c2da758713"
     },
+    "assertthat": {
+      "Package": "assertthat",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "50c838a310445e954bc13f26f26a6ecf"
+    },
     "backports": {
       "Package": "backports",
       "Version": "1.2.1",
@@ -259,6 +266,13 @@
       "Repository": "CRAN",
       "Hash": "af2c2531e55df5cf230c4b5444fc973c"
     },
+    "htmlwidgets": {
+      "Package": "htmlwidgets",
+      "Version": "1.5.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "6fdaa86d0700f8b3e92ee3c445a5a10d"
+    },
     "httpuv": {
       "Package": "httpuv",
       "Version": "1.6.0",
@@ -314,6 +328,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "d908914ae53b04d4c0c0fd72ecc35370"
+    },
+    "learnr": {
+      "Package": "learnr",
+      "Version": "0.10.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "ee4c94c586f032847b5ff679935f2ba4"
     },
     "lifecycle": {
       "Package": "lifecycle",
@@ -434,6 +455,20 @@
       "Repository": "CRAN",
       "Hash": "5e3c5dc0b071b21fa128676560dbe94d"
     },
+    "reactR": {
+      "Package": "reactR",
+      "Version": "0.4.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "75389c8091eb14ee21c6bc87a88b3809"
+    },
+    "reactable": {
+      "Package": "reactable",
+      "Version": "0.2.3",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "ac1afe50d1c77470a72971a07fd146b1"
+    },
     "rematch2": {
       "Package": "rematch2",
       "Version": "2.1.2",
@@ -476,10 +511,17 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "0.4.10",
+      "Version": "0.4.11",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "515f341d3affe0de9e4a7f762efb0456"
+    },
+    "rmarkdown": {
+      "Package": "rmarkdown",
+      "Version": "2.7",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "599df23c40a4fce9c7b4764f28c37857"
+      "Hash": "edbf4cb1aefae783fd8d3a008ae51943"
     },
     "roxygen2": {
       "Package": "roxygen2",
@@ -524,9 +566,9 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "shiny.fluent",
       "RemoteUsername": "Appsilon",
-      "RemoteRef": "kamil.core-rewrite",
-      "RemoteSha": "bceedf34de9327b4ec8b739018427792aaac1785",
-      "Hash": "0a6c9ac86687644d9e7a1dd0ef871a1a"
+      "RemoteRef": "HEAD",
+      "RemoteSha": "4a2da058e6c0bec65ae38de83d0b01ef37c0f4a1",
+      "Hash": "38e0ad3cd9634fbd605c79bca9da10f4"
     },
     "shiny.react": {
       "Package": "shiny.react",
@@ -536,9 +578,23 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "shiny.react",
       "RemoteUsername": "Appsilon",
-      "RemoteRef": "kamil.core-rewrite",
-      "RemoteSha": "6ddb08f3aacd9583b493e34851db196bc80a32ce",
-      "Hash": "cc52ae28e494a3561ac34726496c02f4"
+      "RemoteRef": "HEAD",
+      "RemoteSha": "f61ed04e26449140abac78455fc8b1ad92e8e80b",
+      "Hash": "df1479e7019b96e1c69484a991e4a838"
+    },
+    "shinyAce": {
+      "Package": "shinyAce",
+      "Version": "0.4.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "402073a8a045c9f5ea096ed94e01d9ce"
+    },
+    "sortable": {
+      "Package": "sortable",
+      "Version": "0.4.4",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "d7b990ec80045bd232843c1ba93f0575"
     },
     "sourcetools": {
       "Package": "sourcetools",
@@ -588,6 +644,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "4d894a114dbd4ecafeda5074e7c538e6"
+    },
+    "tinytex": {
+      "Package": "tinytex",
+      "Version": "0.31",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "25b572f764f3c19fef9aac33b5724f3d"
     },
     "utf8": {
       "Package": "utf8",
