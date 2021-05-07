@@ -3,25 +3,25 @@ fluidPage(
     tags$link(rel = "stylesheet", type = "text/css", href = "css/sass.min.css")
   ),
   tabsetPanel(
+    id = "tabs",
     tabPanel(
-      "Hello there!"
+      "Hello there!",
+      value = "home",
     ),
     tabPanel(
       "Configuration",
+      value = "configuration",
       div(id = "test_sort", div("a"), div("b"), div("c"))
     ),
     tabPanel(
       "Preview",
+      value = "preview",
       data_preview$ui("data_preview")
     ),
     tabPanel(
       "Editor",
-      shinyAce::aceEditor(
-        outputId = "editor",
-        mode = "yaml",
-        placeholder = "Show a placeholder when the editor is empty ...",
-        value = "aaasdfsadfa"
-      )
+      value = "editor",
+      yaml_editor$ui("yaml_editor")
     )
   ),
   div(

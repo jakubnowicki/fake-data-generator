@@ -1,4 +1,8 @@
 server <- function(input, output, session) {
+  session$userData$global_triggers <- reactiveValues(
+    selected_tab = "home"
+  )
+
   session$userData$fake_data_configuration <- init_fake_data_configuration
   session$userData$fake_data <- fixtuRes::MockDataGenerator$new(init_fake_data_configuration)
 
@@ -16,4 +20,9 @@ server <- function(input, output, session) {
   observeEvent(input$hide_download_panel, is_download_panel_open(FALSE))
 
   data_preview$server("data_preview")
+  yaml_editor$server("yaml_editor")
+
+  observeEvent(input$tabs, {
+    session$userData$global_triggers$selected_tab <- input$tabs
+  })
 }
