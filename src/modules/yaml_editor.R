@@ -26,6 +26,11 @@ server <- function(id) {
         }
       })
 
+      observeEvent(input$editor, {
+        session$userData$fake_data_configuration <- yaml::yaml.load(input$editor)
+        session$userData$fake_data <- fixtuRes::MockDataGenerator$new(session$userData$fake_data_configuration)
+      }, ignoreInit = TRUE)
+
     }
   })
 }
