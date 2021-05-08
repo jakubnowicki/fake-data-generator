@@ -26,6 +26,14 @@ server <- function(id) {
         trigger(trigger_value)
       })
 
+      observeEvent(session$userData$global_triggers$selected_tab, {
+        if (session$userData$global_triggers$selected_tab == "preview" && session$userData$global_triggers$refresh_data) {
+          trigger_value <- trigger() + 1
+          trigger(trigger_value)
+          session$userData$global_triggers$refresh_data <- FALSE
+        }
+      })
+
       output$preview_data <- renderReactable({
         force(trigger())
         reactable(session$userData$fake_data$get_all_data()[[1]])

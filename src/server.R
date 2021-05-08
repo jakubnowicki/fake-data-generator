@@ -1,6 +1,7 @@
 server <- function(input, output, session) {
   session$userData$global_triggers <- reactiveValues(
-    selected_tab = "home"
+    selected_tab = "home",
+    refresh_data = FALSE
   )
 
   session$userData$fake_data_configuration <- init_fake_data_configuration
