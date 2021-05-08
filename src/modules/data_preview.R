@@ -20,23 +20,24 @@ server <- function(id) {
       trigger <- reactiveVal(0)
 
       observeEvent(input$refresh_data, {
-        session$userData$fake_data$get_all_data(refresh = TRUE)
-
+        session$userData$global_triggers$refresh_data <- TRUE
         trigger_value <- trigger() + 1
         trigger(trigger_value)
-      })
+      }, ignoreInit = TRUE)
 
       observeEvent(session$userData$global_triggers$selected_tab, {
         if (session$userData$global_triggers$selected_tab == "preview" && session$userData$global_triggers$refresh_data) {
           trigger_value <- trigger() + 1
           trigger(trigger_value)
-          session$userData$global_triggers$refresh_data <- FALSE
         }
-      })
+      }, ignoreInit = TRUE)
 
       output$preview_data <- renderReactable({
         force(trigger())
-        reactable(session$userData$fake_data$get_all_data()[[1]])
+        table <- reactable(session$userData$fake_data_store$get_fake_data(session$userData$global_triggers$refresh_data))
+        session$userData$global_triggers$refresh_data <- FALSE
+
+        table
       })
     }
   })

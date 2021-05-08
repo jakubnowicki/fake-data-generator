@@ -21,7 +21,7 @@ server <- function(id) {
           shinyAce::updateAceEditor(
             session,
             "editor",
-            value = yaml::as.yaml(session$userData$fake_data_configuration)
+            value = yaml::as.yaml(session$userData$fake_data_store$get_fake_data_configuration())
           )
         }
       })
@@ -29,9 +29,8 @@ server <- function(id) {
       observeEvent(input$editor, {
         new_fake_data_configuration <- yaml::yaml.load(input$editor)
         if (!identical(session$userData$fake_data_configuration, new_fake_data_configuration)) {
-          session$userData$fake_data_configuration <- new_fake_data_configuration
+          session$userData$fake_data_store$set_fake_data_configuration(new_fake_data_configuration)
           session$userData$global_triggers$refresh_data <- TRUE
-          session$userData$fake_data <- fixtuRes::MockDataGenerator$new(session$userData$fake_data_configuration)
         }
       }, ignoreInit = TRUE)
 
