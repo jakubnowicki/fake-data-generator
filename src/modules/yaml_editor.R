@@ -30,7 +30,6 @@ server <- function(id) {
         new_fake_data_configuration <- yaml::yaml.load(input$editor)
         if (!identical(session$userData$fake_data_configuration, new_fake_data_configuration)) {
           session$userData$fake_data_store$set_fake_data_configuration(new_fake_data_configuration)
-          session$userData$global_triggers$refresh_data <- TRUE
         }
       }, ignoreInit = TRUE)
 

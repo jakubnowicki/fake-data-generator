@@ -2,8 +2,7 @@ fake_data_store <- use("logic/fake_data_store.R")
 
 server <- function(input, output, session) {
   session$userData$global_triggers <- reactiveValues(
-    selected_tab = "home",
-    refresh_data = FALSE
+    selected_tab = "home"
   )
 
   session$userData$fake_data_store <- fake_data_store$FakeDataStore$new(init_fake_data_configuration)
