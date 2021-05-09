@@ -25,6 +25,7 @@ server <- function(input, output, session) {
 
   data_preview$server("data_preview")
   yaml_editor$server("yaml_editor")
+  data_configuration$server("data_configuration")
 
   observeEvent(input$tabs, {
     session$userData$global_triggers$selected_tab <- input$tabs
