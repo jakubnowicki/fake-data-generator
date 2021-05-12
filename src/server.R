@@ -7,8 +7,6 @@ server <- function(input, output, session) {
 
   session$userData$fake_data_store <- fake_data_store$FakeDataStore$new(init_fake_data_configuration)
 
-  session$userData$fake_data_configuration <- init_fake_data_configuration
-  session$userData$fake_data <- fixtuRes::MockDataGenerator$new(init_fake_data_configuration)
 
   is_download_panel_open <- reactiveVal(FALSE)
   output$download_panel <- renderReact({
