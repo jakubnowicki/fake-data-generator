@@ -3,3 +3,60 @@ default:
     input: "styles/main.scss"
     style: "compressed"
     output: "www/css/sass.min.css"
+  column_types:
+    integer:
+      type: "integer"
+      unique:
+        default: FALSE
+        input: "checkboxInput"
+      min:
+        default: 0
+        input: "numericInput"
+      max:
+        default: 999999
+        input: "numericInput"
+    numeric:
+      type: "numeric"
+      unique:
+        default: FALSE
+        input: "checkboxInput"
+      min:
+        default: 0
+        input: "numericInput"
+      max:
+        default: 999999
+        input: "numericInput"
+    string:
+      type: "string"
+      unique:
+        default: FALSE
+        input: "checkboxInput"
+      length:
+        default: NULL
+        input: "numericInput"
+      min_length:
+        default: 1
+        input: "numericInput"
+      max_length:
+        default: 15
+        input: "numericInput"
+      pattern:
+        default: "[A-Za-z0-9]"
+        input: "textInput"
+    boolean:
+      type: "boolean"
+    set:
+      type: "set"
+      set:
+        default: NULL
+        input: "textInput"
+      set_type:
+        default: NULL
+        input: "textInput"
+      set_size:
+        default: NULL
+        input: "numericInput"
+    calculated:
+      type: "calculated"
+      formula:
+        input: "textInput"
