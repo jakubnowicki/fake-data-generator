@@ -9,7 +9,11 @@ library(magrittr)
 
 consts <- config::get(file = "constants/constants.yaml")
 autocompleter <- list(
-  "type", "numeric", "integer", "boolean", "set"
+  "type", "numeric", "integer", "boolean", "set", "min", "max",
+  "unique", "length", "pattern", "string", "set_type", "set_size",
+  "start", "distribution", "distribution_type", "custom",
+  "custom_generator", "custom_column_generator", "calculated",
+  "formula"
 )
 
 sass(
