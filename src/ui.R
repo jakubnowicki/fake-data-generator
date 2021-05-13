@@ -2,25 +2,16 @@ fluidPage(
   tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "css/sass.min.css")
   ),
-  tabsetPanel(
-    id = "tabs",
-    tabPanel(
-      "Hello there!",
-      value = "home",
-    ),
-    tabPanel(
-      "Configuration",
-      value = "configuration",
-      data_configuration$ui("data_configuration")
-    ),
-    tabPanel(
+  div(
+    class = "grid-container",
+    div(
       "Preview",
-      value = "preview",
+      class = "preview panel",
       data_preview$ui("data_preview")
     ),
-    tabPanel(
+    div(
       "Editor",
-      value = "editor",
+      class = "editor panel",
       yaml_editor$ui("yaml_editor")
     )
   ),

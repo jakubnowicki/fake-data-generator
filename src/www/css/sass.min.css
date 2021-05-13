@@ -1,1 +1,1 @@
-.download-panel-button{position:fixed;top:0;right:0}
+.download-panel-button{position:fixed;top:0;right:0}.grid-container{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 10fr;column-gap:10px}.editor{grid-column-start:2;grid-column-end:2;grid-row-start:2;grid-row-end:2}.preview{grid-column-start:1;grid-column-end:1;grid-row-start:2;grid-row-end:2}
