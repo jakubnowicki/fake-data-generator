@@ -11,7 +11,7 @@ fluidPage(
     tabPanel(
       "Configuration",
       value = "configuration",
-      div(id = "test_sort", div("a"), div("b"), div("c"))
+      data_configuration$ui("data_configuration")
     ),
     tabPanel(
       "Preview",
@@ -28,6 +28,5 @@ fluidPage(
     class = "download-panel-button",
     DefaultButton.shinyInput("show_download_panel", text = "Download"),
   ),
-  reactOutput("download_panel"),
-  sortable::sortable_js("test_sort")
+  reactOutput("download_panel")
 )
