@@ -5,8 +5,12 @@ library(config)
 library(sass)
 library(fixtuRes)
 library(reactable)
+library(magrittr)
 
 consts <- config::get(file = "constants/constants.yaml")
+autocompleter <- list(
+  "type", "numeric", "integer", "boolean", "set"
+)
 
 sass(
   sass::sass_file(consts$sass$input),

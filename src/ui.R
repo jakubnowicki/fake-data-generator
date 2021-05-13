@@ -12,7 +12,7 @@ fluidPage(
     div(
       "Editor",
       class = "editor panel",
-      yaml_editor$ui("yaml_editor")
+      yaml_editor$ui("yaml_editor", autocompleter)
     )
   ),
   div(

@@ -20,6 +20,7 @@ server <- function(id) {
 
       output$preview_data <- renderReactable({
         input$refresh_data
+        session$userData$triggers$refresh
         reactable(session$userData$fake_data_store$get_fake_data())
       })
     }

@@ -8,6 +8,7 @@ FakeDataStore <- R6Class(
   private = list(
     fake_data = NULL,
     fake_data_configuration = NULL,
+    old_configuration = NULL,
     set_new_fake_data_configuration = function(new_configuration) {
       private$fake_data_configuration <- new_configuration
       private$generate_new_fake_data()
@@ -28,6 +29,15 @@ FakeDataStore <- R6Class(
     },
     set_fake_data_configuration = function(new_configuration) {
       private$set_new_fake_data_configuration(new_configuration)
+    },
+    check_configuration = function() {
+      tryCatch({
+        invisible(self$get_fake_data())
+        return(TRUE)
+      }, error = function(e) {
+        self$set_fake_data_configuration(private$old_configuration)
+        return(FALSE)
+      })
     }
   )
 )

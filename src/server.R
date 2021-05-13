@@ -2,6 +2,9 @@ fake_data_store <- use("logic/fake_data_store.R")
 
 server <- function(input, output, session) {
   session$userData$fake_data_store <- fake_data_store$FakeDataStore$new(init_fake_data_configuration)
+  session$userData$triggers <- reactiveValues(
+    refresh = 0
+  )
 
 
   is_download_panel_open <- reactiveVal(FALSE)
