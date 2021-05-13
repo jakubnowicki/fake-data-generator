@@ -10,7 +10,7 @@ ui <- function(id) {
     outputId = ns("editor"),
     mode = "yaml",
     placeholder = "Put your configuration here",
-    debounce = 2000,
+    debounce = 500,
     tabSize = 2
   )
 }
@@ -18,15 +18,14 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, {
     function(input, output, session) {
-      observeEvent(session$userData$global_triggers$selected_tab, {
-        if (session$userData$global_triggers$selected_tab == "editor") {
+      observe({
           shinyAce::updateAceEditor(
             session,
             "editor",
             value = yaml::as.yaml(session$userData$fake_data_store$get_fake_data_configuration())
           )
         }
-      })
+      )
 
       observeEvent(input$editor,
         {
@@ -36,7 +35,7 @@ server <- function(id) {
             if (!identical(session$userData$fake_data_configuration, new_fake_data_configuration)) {
               session$userData$fake_data_store$set_fake_data_configuration(new_fake_data_configuration)
             }
-          })
+          }, error = function(e) invisible())
         },
         ignoreInit = TRUE
       )
