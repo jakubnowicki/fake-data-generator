@@ -5,11 +5,11 @@ fluidPage(
   div(
     class = "grid-container",
     div(
-      class = "preview panel",
+      class = "preview card",
       data_preview$ui("data_preview")
     ),
     div(
-      class = "editor panel",
+      class = "editor card",
       yaml_editor$ui("yaml_editor", autocompleter)
     ),
     div(
