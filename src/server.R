@@ -12,7 +12,7 @@ server <- function(input, output, session) {
     Panel(
       headerText = "Download data",
       isOpen = is_download_panel_open(),
-       "Download buttons and stuff",
+      download$ui("download"),
       onDismiss = JS("function() { Shiny.setInputValue('hide_download_panel', Math.random()); }")
     )
   })
@@ -46,6 +46,18 @@ server <- function(input, output, session) {
   observeEvent(input$show_help_panel, is_help_panel_open(TRUE))
   observeEvent(input$hide_help_panel, is_help_panel_open(FALSE))
 
+  data <- mtcars
+
+  output$download_yaml <- downloadHandler(
+        filename = function() {
+          paste('data-', Sys.Date(), '.csv', sep='')
+        },
+        content = function(file) {
+          write.csv(data, file)
+        }
+      )
+
   data_preview$server("data_preview")
   yaml_editor$server("yaml_editor")
+  download$server("download")
 }
