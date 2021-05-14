@@ -8,9 +8,8 @@ ui <- function(id) {
   ns <- NS(id)
 
   div(
-    shiny.fluent::DefaultButton.shinyInput(ns("refresh_data"), text = "Refresh data"),
-    shiny.fluent::Separator("Fake data", alignContent = "center"),
-    reactableOutput(ns("preview_data"))
+    reactableOutput(ns("preview_data")),
+    shiny.fluent::DefaultButton.shinyInput(ns("refresh_data"), text = "Refresh data")
   )
 }
 

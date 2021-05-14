@@ -20,6 +20,32 @@ server <- function(input, output, session) {
   observeEvent(input$show_download_panel, is_download_panel_open(TRUE))
   observeEvent(input$hide_download_panel, is_download_panel_open(FALSE))
 
+  is_about_panel_open <- reactiveVal(TRUE)
+  output$about_panel <- renderReact({
+    Panel(
+      headerText = "About",
+      isOpen = is_about_panel_open(),
+       "about",
+      onDismiss = JS("function() { Shiny.setInputValue('hide_about_panel', Math.random()); }")
+    )
+  })
+
+  observeEvent(input$show_about_panel, is_about_panel_open(TRUE))
+  observeEvent(input$hide_about_panel, is_about_panel_open(FALSE))
+
+  is_help_panel_open <- reactiveVal(FALSE)
+  output$help_panel <- renderReact({
+    Panel(
+      headerText = "Help",
+      isOpen = is_help_panel_open(),
+       "Help",
+      onDismiss = JS("function() { Shiny.setInputValue('hide_help_panel', Math.random()); }")
+    )
+  })
+
+  observeEvent(input$show_help_panel, is_help_panel_open(TRUE))
+  observeEvent(input$hide_help_panel, is_help_panel_open(FALSE))
+
   data_preview$server("data_preview")
   yaml_editor$server("yaml_editor")
 }

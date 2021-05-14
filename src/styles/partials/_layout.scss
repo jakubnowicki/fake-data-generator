@@ -8,20 +8,42 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 10fr;
-    column-gap: 10px;
-    row-gap: 10px;
+    grid-template-areas: "header header" "preview editor";
+    column-gap: 20px;
+    row-gap: 30px;
+    align-items: stretch;
+    min-height: 100vh;
 }
 
 .editor {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
+    grid-area: editor;
 }
 
 .preview {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 2;
-    grid-row-end: 2;
+    grid-area: preview;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    h1 {
+        margin: 0;
+        left: 0;
+        place-self: center stretch;
+        align-self: center;
+    }
+    .menu-buttons {
+        place-self: end;
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.card {
+    box-shadow: 0px 0px 10px 2px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }

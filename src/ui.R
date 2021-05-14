@@ -5,19 +5,24 @@ fluidPage(
   div(
     class = "grid-container",
     div(
-      "Preview",
-      class = "preview panel",
+      class = "preview card",
       data_preview$ui("data_preview")
     ),
     div(
-      "Editor",
-      class = "editor panel",
+      class = "editor card",
       yaml_editor$ui("yaml_editor", autocompleter)
+    ),
+    div(
+      class = "header",
+      h1("Fake Data Generator"),
+      div(class = "menu-buttons",
+        DefaultButton.shinyInput("show_about_panel", text = "About"),
+        DefaultButton.shinyInput("show_help_panel", text = "Help"),
+        DefaultButton.shinyInput("show_download_panel", text = "Download")
+      )
     )
   ),
-  div(
-    class = "download-panel-button",
-    DefaultButton.shinyInput("show_download_panel", text = "Download"),
-  ),
-  reactOutput("download_panel")
+  reactOutput("download_panel"),
+  reactOutput("about_panel"),
+  reactOutput("help_panel")
 )
