@@ -6,6 +6,7 @@ library(sass)
 library(fixtuRes)
 library(reactable)
 library(magrittr)
+library(markdown)
 
 consts <- config::get(file = "constants/constants.yaml")
 autocompleter <- list(
@@ -29,3 +30,4 @@ data_preview <- modules::use("modules/data_preview.R")
 yaml_editor <- modules::use("modules/yaml_editor.R")
 download <- modules::use("modules/download.R")
 about <- modules::use("modules/about.R")
+help <- modules::use("modules/help.R")
