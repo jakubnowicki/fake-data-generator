@@ -15,7 +15,11 @@ fluidPage(
     ),
     div(
       class = "header",
-      h1("Fake Data Generator"),
+      div(
+        class = "title-container",
+        tags$img(src = "img/fake.jpg"),
+        h1("Data Generator")
+      ),
       div(
         class = "menu-buttons",
         Stack(

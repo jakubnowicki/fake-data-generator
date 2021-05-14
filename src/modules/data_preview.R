@@ -8,6 +8,7 @@ ui <- function(id) {
   ns <- NS(id)
 
   div(
+    class = "table-container",
     reactableOutput(ns("preview_data"))
   )
 }
@@ -22,7 +23,7 @@ server <- function(id) {
           session$userData$fake_data_store$get_fake_data(),
           bordered = TRUE,
           highlight = TRUE,
-          defaultPageSize = 20,
+          defaultPageSize = 10,
           showPageSizeOptions = TRUE,
           pageSizeOptions = c(10, 20, 50)
         )

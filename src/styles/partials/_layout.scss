@@ -7,7 +7,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 10fr;
+    grid-template-rows: 100px calc(100vh - 110px);
     grid-template-areas: "header header" "preview editor";
     column-gap: 20px;
     row-gap: 10px;
@@ -27,11 +27,18 @@
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    h1 {
-        margin: 0;
+    .title-container {
         left: 0;
         place-self: center stretch;
         align-self: center;
+        img {
+            height: 100px;
+            display: inline-block;
+        }
+        h1 {
+            margin: 0;
+            display: inline-block;
+        }
     }
     .menu-buttons {
         place-self: end;
@@ -44,4 +51,9 @@
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 30px;
+}
+
+.table-container {
+    overflow-y: scroll;
+    max-height: 100%;
 }
