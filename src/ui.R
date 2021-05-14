@@ -1,4 +1,5 @@
 fluidPage(
+  title = "Fake Data Generator",
   tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "css/sass.min.css")
   ),
