@@ -18,7 +18,14 @@ server <- function(id) {
 
       output$preview_data <- renderReactable({
         session$userData$triggers$refresh
-        reactable(session$userData$fake_data_store$get_fake_data())
+        reactable(
+          session$userData$fake_data_store$get_fake_data(),
+          bordered = TRUE,
+          highlight = TRUE,
+          defaultPageSize = 20,
+          showPageSizeOptions = TRUE,
+          pageSizeOptions = c(10, 20, 50)
+        )
       })
     }
   })
