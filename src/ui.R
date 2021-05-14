@@ -1,4 +1,5 @@
 fluidPage(
+  title = "Fake Data Generator",
   tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "css/sass.min.css")
   ),
@@ -14,11 +15,21 @@ fluidPage(
     ),
     div(
       class = "header",
-      h1("Fake Data Generator"),
-      div(class = "menu-buttons",
-        DefaultButton.shinyInput("show_about_panel", text = "About"),
-        DefaultButton.shinyInput("show_help_panel", text = "Help"),
-        DefaultButton.shinyInput("show_download_panel", text = "Download")
+      div(
+        class = "title-container",
+        tags$img(src = "img/fake.jpg"),
+        h1("Data Generator")
+      ),
+      div(
+        class = "menu-buttons",
+        Stack(
+          uiOutput("data_validation", inline = TRUE),
+          PrimaryButton.shinyInput("show_about_panel", text = "About"),
+          PrimaryButton.shinyInput("show_help_panel", text = "Help"),
+          PrimaryButton.shinyInput("show_download_panel", text = "Download"),
+          horizontal = TRUE,
+          tokens = list(childrenGap = 10)
+        )
       )
     )
   ),

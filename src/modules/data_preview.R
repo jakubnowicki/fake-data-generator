@@ -8,8 +8,8 @@ ui <- function(id) {
   ns <- NS(id)
 
   div(
-    reactableOutput(ns("preview_data")),
-    shiny.fluent::DefaultButton.shinyInput(ns("refresh_data"), text = "Refresh data")
+    class = "table-container",
+    reactableOutput(ns("preview_data"))
   )
 }
 
@@ -18,9 +18,15 @@ server <- function(id) {
     function(input, output, session) {
 
       output$preview_data <- renderReactable({
-        input$refresh_data
         session$userData$triggers$refresh
-        reactable(session$userData$fake_data_store$get_fake_data())
+        reactable(
+          session$userData$fake_data_store$get_fake_data(),
+          bordered = TRUE,
+          highlight = TRUE,
+          defaultPageSize = 10,
+          showPageSizeOptions = TRUE,
+          pageSizeOptions = c(10, 20, 50)
+        )
       })
     }
   })

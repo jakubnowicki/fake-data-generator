@@ -5,9 +5,9 @@ account: jakubnowicki
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4130773
-bundleId: 4599349
+bundleId: 4599606
 url: https://jakubnowicki.shinyapps.io/fake-data-generator/
-when: 1621017460.97607
-lastSyncTime: 1621017460.9761
+when: 1621022593.12401
+lastSyncTime: 1621022593.12404
 asMultiple: FALSE
 asStatic: FALSE
