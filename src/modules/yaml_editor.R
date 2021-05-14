@@ -16,7 +16,9 @@ ui <- function(id, autocompleter) {
     tabSize = 2,
     autoComplete = "live",
     autoCompleters = "static",
-    autoCompleteList = autocompleter
+    autoCompleteList = autocompleter,
+    height = "100%",
+    fontSize = 14
   )
 }
 
