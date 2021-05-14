@@ -44,10 +44,14 @@ server <- function(id) {
               change <- TRUE
               session$userData$fake_data_store$set_fake_data_configuration(new_fake_data_configuration)
             }
-          }, error = function(e) invisible())
+          }, error = function(e) {session$userData$triggers$data_validation <- FALSE})
           check <- session$userData$fake_data_store$check_configuration()
           if (change && check) {
             session$userData$triggers$refresh <- session$userData$triggers$refresh + 1
+            session$userData$triggers$data_validation <- TRUE
+          }
+          if (!check) {
+            session$userData$triggers$data_validation <- FALSE
           }
         },
         ignoreInit = TRUE

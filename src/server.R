@@ -3,11 +3,23 @@ fake_data_store <- use("logic/fake_data_store.R")
 server <- function(input, output, session) {
   session$userData$fake_data_store <- fake_data_store$FakeDataStore$new(init_fake_data_configuration)
   session$userData$triggers <- reactiveValues(
-    refresh = 0
+    refresh = 0,
+    data_validation = TRUE
   )
 
   observeEvent(input$refresh_data, {
     session$userData$triggers$refresh <- session$userData$triggers$refresh + 1
+  })
+
+  output$data_validation <- renderUI({
+    if (session$userData$triggers$data_validation) {
+      tagList(
+        span("Configuration is OK", style = "color: green;"),
+        PrimaryButton.shinyInput("refresh_data", text = "Refresh data")
+      )
+    } else {
+      span("There are problems with your configuration", style = "color: red; padding-top: 7px")
+    }
   })
 
 

@@ -23,7 +23,7 @@ fluidPage(
       div(
         class = "menu-buttons",
         Stack(
-          PrimaryButton.shinyInput("refresh_data", text = "Refresh data"),
+          uiOutput("data_validation", inline = TRUE),
           PrimaryButton.shinyInput("show_about_panel", text = "About"),
           PrimaryButton.shinyInput("show_help_panel", text = "Help"),
           PrimaryButton.shinyInput("show_download_panel", text = "Download"),

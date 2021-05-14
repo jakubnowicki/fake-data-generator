@@ -57,3 +57,12 @@
     overflow-y: scroll;
     max-height: 100%;
 }
+
+#data_validation {
+    >span {
+        display: inline-block;
+    }
+    >div {
+        display: inline-block;
+    }
+}
