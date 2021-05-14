@@ -6,6 +6,10 @@ server <- function(input, output, session) {
     refresh = 0
   )
 
+  observeEvent(input$refresh_data, {
+    session$userData$triggers$refresh <- session$userData$triggers$refresh + 1
+  })
+
 
   is_download_panel_open <- reactiveVal(FALSE)
   output$download_panel <- renderReact({

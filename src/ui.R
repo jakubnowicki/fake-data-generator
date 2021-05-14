@@ -15,10 +15,16 @@ fluidPage(
     div(
       class = "header",
       h1("Fake Data Generator"),
-      div(class = "menu-buttons",
-        DefaultButton.shinyInput("show_about_panel", text = "About"),
-        DefaultButton.shinyInput("show_help_panel", text = "Help"),
-        DefaultButton.shinyInput("show_download_panel", text = "Download")
+      div(
+        class = "menu-buttons",
+        Stack(
+          PrimaryButton.shinyInput("refresh_data", text = "Refresh data"),
+          PrimaryButton.shinyInput("show_about_panel", text = "About"),
+          PrimaryButton.shinyInput("show_help_panel", text = "Help"),
+          PrimaryButton.shinyInput("show_download_panel", text = "Download"),
+          horizontal = TRUE,
+          tokens = list(childrenGap = 10)
+        )
       )
     )
   ),

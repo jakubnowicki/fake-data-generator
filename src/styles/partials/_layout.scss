@@ -10,7 +10,7 @@
     grid-template-rows: 1fr 10fr;
     grid-template-areas: "header header" "preview editor";
     column-gap: 20px;
-    row-gap: 30px;
+    row-gap: 10px;
     align-items: stretch;
     min-height: 100vh;
 }
@@ -36,8 +36,6 @@
     .menu-buttons {
         place-self: end;
         align-self: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
