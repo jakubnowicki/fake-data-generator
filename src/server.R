@@ -14,7 +14,7 @@ server <- function(input, output, session) {
   output$data_validation <- renderUI({
     if (session$userData$triggers$data_validation) {
       tagList(
-        span("Configuration is OK", style = "color: green;"),
+        span("Configuration is OK", style = "color: green; padding-right: 10px;"),
         PrimaryButton.shinyInput("refresh_data", text = "Refresh data")
       )
     } else {
