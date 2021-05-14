@@ -28,3 +28,4 @@ init_fake_data_configuration <- yaml::read_yaml("constants/init_data_configurati
 data_preview <- modules::use("modules/data_preview.R")
 yaml_editor <- modules::use("modules/yaml_editor.R")
 download <- modules::use("modules/download.R")
+about <- modules::use("modules/about.R")

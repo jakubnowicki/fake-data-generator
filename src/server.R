@@ -25,7 +25,7 @@ server <- function(input, output, session) {
     Panel(
       headerText = "About",
       isOpen = is_about_panel_open(),
-       "about",
+      about$ui("about"),
       onDismiss = JS("function() { Shiny.setInputValue('hide_about_panel', Math.random()); }")
     )
   })
