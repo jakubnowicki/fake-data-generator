@@ -38,7 +38,7 @@ server <- function(input, output, session) {
     Panel(
       headerText = "Help",
       isOpen = is_help_panel_open(),
-       "Help",
+      help$ui("help"),
       onDismiss = JS("function() { Shiny.setInputValue('hide_help_panel', Math.random()); }")
     )
   })
@@ -49,4 +49,5 @@ server <- function(input, output, session) {
   data_preview$server("data_preview")
   yaml_editor$server("yaml_editor")
   download$server("download")
+  help$server("help")
 }
