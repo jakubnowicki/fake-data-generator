@@ -17,7 +17,11 @@ fluidPage(
   ),
   div(
     class = "download-panel-button",
-    DefaultButton.shinyInput("show_download_panel", text = "Download"),
+    DefaultButton.shinyInput("show_about_panel", text = "About"),
+    DefaultButton.shinyInput("show_help_panel", text = "Help"),
+    DefaultButton.shinyInput("show_download_panel", text = "Download")
   ),
-  reactOutput("download_panel")
+  reactOutput("download_panel"),
+  reactOutput("about_panel"),
+  reactOutput("help_panel")
 )
