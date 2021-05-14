@@ -1,5 +1,3 @@
-##### numeric
-
 Random float numbers from a range
 
 Parameters:
