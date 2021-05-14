@@ -10,9 +10,9 @@ server <- function(input, output, session) {
   is_download_panel_open <- reactiveVal(FALSE)
   output$download_panel <- renderReact({
     Panel(
-      headerText = "Download data",
+      headerText = "Download",
       isOpen = is_download_panel_open(),
-       "Download buttons and stuff",
+      download$ui("download"),
       onDismiss = JS("function() { Shiny.setInputValue('hide_download_panel', Math.random()); }")
     )
   })
@@ -48,4 +48,5 @@ server <- function(input, output, session) {
 
   data_preview$server("data_preview")
   yaml_editor$server("yaml_editor")
+  download$server("download")
 }

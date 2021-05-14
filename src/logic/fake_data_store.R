@@ -21,8 +21,8 @@ FakeDataStore <- R6Class(
     initialize = function(initial_configuration) {
       private$set_new_fake_data_configuration(initial_configuration)
     },
-    get_fake_data = function() {
-      private$fake_data$get_all_data(refresh = TRUE)[[1]]
+    get_fake_data = function(refresh = TRUE) {
+      private$fake_data$get_all_data(refresh = refresh)[[1]]
     },
     get_fake_data_configuration = function() {
       private$fake_data_configuration
@@ -38,6 +38,9 @@ FakeDataStore <- R6Class(
         self$set_fake_data_configuration(private$old_configuration)
         return(FALSE)
       })
+    },
+    get_fake_data_generator = function() {
+      private$fake_data
     }
   )
 )
