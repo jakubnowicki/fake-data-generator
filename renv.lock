@@ -227,9 +227,9 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "fixtuRes",
       "RemoteUsername": "jakubnowicki",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "745ed10b17c6da1ec5ed4f5cf218b8f8b15f79a5",
-      "Hash": "7527dc2fddce5975e471e0731f615b1d"
+      "RemoteRef": "fix-shinyapps-deployment",
+      "RemoteSha": "577cd2a1a7668d1fca5262e4acdf578690ac4322",
+      "Hash": "fc2d3e267ccc93af6100b4e9f4bf58d2"
     },
     "fs": {
       "Package": "fs",
