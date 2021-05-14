@@ -8,11 +8,13 @@ ui <- function(id, help_values) {
   ns <- NS(id)
 
   div(
+    shiny.fluent::Separator(),
     shiny.fluent::Dropdown.shinyInput(
       ns("select_help"),
       value = help_values[[1]]$key,
       options = unname(help_values)
     ),
+    shiny.fluent::Separator(),
     uiOutput(ns("description"))
   )
 }
