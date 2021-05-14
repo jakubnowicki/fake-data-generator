@@ -22,7 +22,6 @@ fluidPage(
       )
     )
   ),
-  downloadLink("download_yaml", "Download yaml"),
   reactOutput("download_panel"),
   reactOutput("about_panel"),
   reactOutput("help_panel")
